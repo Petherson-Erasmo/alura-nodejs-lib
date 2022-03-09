@@ -24,8 +24,6 @@ async function getFile (filePath) {
     console.log(extractsLink(text))
   } catch (erro) {
     handleErro(erro)
-  } finally {
-    console.log(chalk.yellow('operação concluída'))
   }
 }
 
@@ -50,4 +48,6 @@ async function getFile (filePath) {
 //   })
 // }
 
-getFile('./arquivos/texto1.md')
+// getFile('./arquivos/texto1.md')
+
+module.exports = getFile
