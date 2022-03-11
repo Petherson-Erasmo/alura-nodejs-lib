@@ -13,15 +13,18 @@ function extractsLink (text) {
 }
 
 function handleErro (erro) {
-  throw new Error(chalk.red(erro.code, 'não há arquivo no caminho'))
+  throw new Error(
+    chalk.red(erro.code, 'não há arquivo no caminho'))
 }
 
 /* code async */
 async function getFile (filePath) {
   const encoding = 'utf-8'
   try {
-    const text = await fs.promises.readFile(filePath, encoding)
-    console.log(extractsLink(text))
+    const text = await fs
+      .promises
+      .readFile(filePath, encoding)
+    return extractsLink(text)
   } catch (erro) {
     handleErro(erro)
   }
