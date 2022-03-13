@@ -9,7 +9,7 @@ function extractsLink (text) {
     resultArray.push({ [temp[1]]: temp[2] })
   }
 
-  return resultArray
+  return resultArray.length === 0 ? 'não há links' : resultArray
 }
 
 function handleErro (erro) {
